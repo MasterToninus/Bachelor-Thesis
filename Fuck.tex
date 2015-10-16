@@ -1,0 +1,472 @@
+\documentclass[11pt]{report}
+
+\title{TESI}
+\author{AMM}
+
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[mathscr]{eucal} 
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{caption}
+\usepackage{latexsym}
+\usepackage{epstopdf}
+\usepackage{eepic,epic,eepicemu}
+\usepackage{color}
+
+\usepackage{bm}
+\pagestyle{headings}
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.95,0.95,0.95}
+
+\usepackage{amsthm}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Teorema}[section]
+\newtheorem{cor}[thm]{Corollario}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposizione}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definizione}[chapter]
+
+\theoremstyle{remark}
+\newtheorem{oss}{Osservazione}
+
+
+\begin{document}
+\maketitle
+
+\chapter{Struttura geometrica del gruppo delle rotazioni}
+Dal capitolo precedente è evidente la moltitudine di punti di vista da cui si può affrontare lo studio delle rotazioni, lo studio ha portato ad identificare un solo gruppo astratto di cui ,ad esempio, le rotazioni attive o passive non sono altro che l'azione di questo gruppo su varietà differenti.
+
+Inoltre si è dimostrato che il gruppo $\mathscr{R}$ è isomorfo al gruppo di Lie delle matrice ortogonali speciali, nulla vieta a questo punto di identificare direttamente le rotazioni con SO(3). Questo processo ha il vantaggio di fornire una rappresentazione esplicita degli elementi del gruppo, pertanto apre la possibilità di realizzare direttamente le strutture gruppali presentate nei primi due capitoli.
+
+\section{Struttura differenziale di SO(3)}
+Innanzi tutto si analizzano le strutture di SO(3) in quanto varietà differenziale. 
+
+Formalmente è possibile dimostrare questa proprietà (richiesta dalla definizione di gruppo di Lie) in due passaggi: per prima cosa si dimostra che $O(n)$ costituisce una sottovarietà di $M(n,\mathbb{R})$ poi si verifica che $SO(n)$ è un sottoinsieme aperto non nullo di $O(n)$ (fare riferimento a D.Holm pag 73).
+  
+\subsection{La coordinatizzazione di SO(3)}
+Sono possibili varie parametrizzazioni del gruppo delle rotazioni, tradizionalmente si sceglie come sistema di coordinate su $SO(3)$ gli angoli di Eulero $(\psi, \theta, \phi)$.
+Il generico elemento può quindi essere ottenuto componendo successivamente le 3 rotazioni consecutive:
+
+\begin{displaymath}
+R_{z}(\psi) = \left[ \begin{array}{ccc}
+\cos(\psi) & \sin(\psi) & 0  \\
+-\sin(\psi) & \cos(\psi) & 0  \\
+0 & 0 & 1 \\
+\end{array} \right]
+\end{displaymath}	
+
+\begin{displaymath}
+R_{x}(\theta) = \left[ \begin{array}{ccc}
+1 & 0 &0 \\
+0 & \cos(\theta) & \sin(\theta)  \\
+0 & -\sin(\theta) & \cos(\theta)   \\
+\end{array} \right]
+\end{displaymath}	
+
+\begin{displaymath}
+R_{z}(\phi) = \left[ \begin{array}{ccc}
+\cos(\phi) & \sin(\phi) & 0  \\
+-\sin(\phi) & \cos(\phi) & 0  \\
+0 & 0 & 1 \\
+\end{array} \right]
+\end{displaymath}	
+
+rappresentanti delle rotazioni passive che agiscono sulla terna di riferimento $(e_ {1 }, e_{2}, e_{3})$ a destra come espresso come espresso dall'equazione (\ref{eq:azionedestrariferimenti}).
+
+Il generico elemento  $R \in SO(3)$ ammette quindi la parametrizzazione: $R(\psi , \theta , \phi) = R_{z}(\phi)R_{x}(\theta)R_{z}(\psi) = $
+\begin{equation}\label{eq:genericoReulero}
+\left[ \begin{array}{ccc}
+\cos(\psi)\cos(\phi) -\sin(\psi)\cos(\theta)\sin(\phi) & \sin(\psi)\cos(\phi) + \cos(\psi)\cos(\theta)\sin(\phi) & \sin(\theta)\sin(\phi)  \\
+-\cos(\psi)\sin(\phi) -\sin(\psi)\cos(\theta)\cos(\phi) & -\sin(\psi)\sin(\phi) + \cos(\psi)\cos(\theta)\cos(\phi) & \sin(\theta)\cos(\phi)  \\
+\sin(\psi)\sin(\theta) & -\cos(\psi)\sin(\theta) & \cos(\theta) \\
+\end{array} \right]
+\end{equation}	
+
+\subsection{La base naturale di SO(3)}
+
+In una qualsiasi varietà differenziale la scelta di un sistema coordinate induce una base sullo spazio tangente ad ogni punto costituita delle velocità delle curve coordinate (curve parametrizzate sulla varietà che sulla carta coordinata scelta assumono valori costanti per ogni coordinata tranne una).
+
+Siccome la varietà è in questo caso composta da matrici, in virtù della possibilità di intendere $SO(3)$ come una sottovarietà di $GL(3,\mathbb{R}) \simeq \mathbb{R}^{9}$, le curve coordinate (costruite prendendo la matrice (\ref{eq:genericoReulero}) mantenendo fisse due cordinate e tenendo la terza come parametro), e quindi i vettori della base naturale, ammettono un'espressione esplicita:
+
+\begin{displaymath}
+\dfrac{\partial}{\partial \psi} := \dfrac{\partial R}{\partial \psi} = \left[ \begin{array}{ccc}
+-\cos(\phi) \sin(\psi) - \sin(\phi) \cos(\theta) \sin(\psi) & \cos(\phi)\cos(\theta) -\sin(\phi)\cos(\theta)\sin(\psi) & 0  \\
+\sin(\phi) \sin(\psi) - \cos(\phi) \cos(\theta) \cos(\psi) & - \sin(\phi)\cos(\psi) -\cos(\phi)\cos(\theta)\sin(\psi) & 0  \\
+\cos(\phi)\sin(\theta) & \sin(\psi)\sin(\theta) & 0 \\
+\end{array} \right]
+\end{displaymath}
+
+\begin{displaymath}
+\dfrac{\partial}{\partial \theta} := \dfrac{\partial R}{\partial \theta} = \left[ \begin {array}{ccc} \sin \left( \phi \right) \sin \left( \theta \right) \sin \left( \psi \right) &-\sin \left( \phi \right) \sin \left( \theta \right) \cos \left( \psi \right) &\sin \left( \phi \right) \cos \left( \theta \right) \\ \noalign{\medskip}\cos \left( \phi \right) \sin \left( \theta \right) \sin \left( \psi \right) &-\cos \left( \phi \right) \sin \left( \theta \right) \cos \left( \psi \right) &\cos \left( \phi \right) \cos \left( \theta \right) \\ \noalign{\medskip}\sin \left( \psi \right) \cos \left( \theta \right) &-\cos \left( \psi \right) \cos \left( \theta \right) &-\sin \left( \theta \right) \end {array} \right]
+\end{displaymath}
+
+\begin{displaymath}
+\dfrac{\partial}{\partial \phi} := \dfrac{\partial R}{\partial \phi} = \left[ \begin {array}{ccc} -\sin \left( \phi \right) \cos \left( \psi \right) -\cos \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right) &-\sin \left( \phi \right) \sin \left( \psi \right) +\cos \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right) &\cos \left( \phi \right) \sin \left( \theta \right) \\ \noalign{\medskip}-\cos \left( \phi \right) \cos \left( \psi \right) +\sin \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right) &-\cos \left( \phi \right) \sin \left( \psi \right) -\sin \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right) &-\sin \left( \phi \right) \sin \left( \theta \right) \\ \noalign{\medskip}0&0&0\end {array} \right]
+\end{displaymath}
+
+Gli elementi della base naturale nell'identità risultano:
+\begin{figure}[!h]
+\mbox{%
+
+	\begin{minipage}{.35\textwidth}	
+\begin{displaymath}\small
+\dfrac{\partial R}{\partial \psi} (0,0,0) = \left[ \begin{array}{ccc}
+0 & 1 &0  \\
+-1 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{array} \right]
+\end{displaymath}	
+	\end {minipage}
+
+	\begin{minipage}{.35\textwidth}	
+\begin{displaymath}\small
+\dfrac{\partial R}{\partial \theta} (0,0,0) = \left[ \begin{array}{ccc}
+0 & 0 & 0  \\
+0 & 0 & 1 \\
+0 & -1 & 0 \\
+\end{array} \right]
+\end{displaymath}	
+\end {minipage}
+
+	\begin{minipage}{.35\textwidth}	
+\begin{displaymath}\small
+\dfrac{\partial R}{\partial \phi} (0,0,0) = \left[ \begin{array}{ccc}
+0 & 1 & 0  \\
+-1 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{array} \right]
+\end{displaymath}	
+\end {minipage}%
+		}
+\end{figure}
+
+e non costituiscono una base dell'algebra del gruppo, in quanto se $\theta$ è zero l'azione della rotazione $\psi$ e $\phi$ sono identiche.
+In altre parole gli angoli di Eulero non constituiscono un \emph{sistema di coordinate globali} su $SO(3)$ non sono univocamente definiti nell'intorno dell'origine.
+
+\subsection{La base duale di SO(3)}
+
+
+\section{Struttura gruppale di SO(3)}
+É immediato verificare che gli elementi di $SO(3)$ ovvero le matrici ortogonali speciali
+costituiscono un gruppo, quindi per quanto detto precedentemente costituiscono un gruppo di Lie.
+
+
+
+\subsection{Algebra di SO(3)}
+
+Il gruppo SO(3) è costituito dall'intersezione dei gruppi:
+\begin{displaymath}
+O(3) : = \lbrace A \in GL(n, \mathbb{R}) \; | \; A A^{T} = A^{T} A = Id \rbrace
+\end{displaymath}
+e
+\begin{displaymath}
+SL(3) : = \lbrace A \in GL(n, \mathbb{R}) \; | \; \textrm{det}(A) = 1 \rbrace
+\end{displaymath}
+
+l'algebra può essere ottenuta intersecando le algebre di questi due gruppi.
+
+\paragraph{L'algebra di SL(n)}$\\$
+Semplicemente si applica il procedimento descritto nel secondo capitolo: si cercano le curve tangenti al gruppo nell'identità.
+
+Le curve passanti per $Id$ sono del tipo:
+$$ A(t) = Id + t \dot{A}$$
+dove $A$ è il vettore velocità della curva. Le curve tangenti al gruppo sono tali che in un intorno di $t=0$: $$ A(t)- o(t) \in G$$
+pertanto le matrici $\dot{A}$ costituiscono tutti e soli gli elementi di $\mathfrak{g}$.
+
+In questo caso deve valere che
+$$\textrm{det} A(t) \simeq 1 + o(t) \qquad \textrm{con } t\rightarrow 0 $$ 
+in altre parole, siano $a_{i \, j}$ gli elementi della matrice $\dot{A}$, risulta:
+
+\begin{displaymath}
+\textrm{det} \left[ \begin{array}{ccc}
+1 + t a_{1 \, 1} & t a_{1 \, 2} & \cdots  \\
+t a_{2 \, 1} & 1 + t a_{2 \, 2} &  \\
+\vdots &  & \ddots \\
+\end{array} \right] \xrightarrow[t \simeq 0]{} \prod_{i=1}^{n}(1 + t a_{i \, i}) + o(t) = 1 +\sum_{i=1}^{n}(a_{i \, i})+ o(t) = 1 +t \, \textrm{Tr}(\dot{A}) + o(t)
+\end{displaymath}	
+
+quindi per le curve tangenti deve valere $\textrm{Tr}(\dot{A}) = 0 $ ovvero $\mathfrak{sl(n)}$ è lo spazio vettoriale di tutte le matrici quadrate di dimensione $n$ a traccia nulla.
+
+\paragraph{L'algebra di O(n)}$\\$
+Ripetendo quanto fatto nel precedente paragrafo,le curve tangenti al gruppo ortogonale devono essere tali che :
+$$A(t)A^{T}(t) =Id + t(\dot{A} +\dot{A}^{T}) + t^{2} \, \dot{A}^{2}= Id + o(t) \qquad \textrm{con } t\rightarrow 0 $$
+l'equazione è soddisfatta se e solo se $ \dot{A} = -\dot{A}^{T}$.
+Quindi l'algebra $\mathfrak{o(3)}$ è lo spazio vettoriale della matrici antisimmetriche, quadrate di dimensione $n$.
+
+$\\$
+
+\paragraph{L'algebra di SO(3)}$\\$
+A questo punto i due insiemi appena trovati andrebbero intersecati, in realtà le matrici antisimmetriche sono necessariamente a traccia nulla. Pertanto:
+\begin{equation}
+\mathfrak{so(3)} = \mathfrak{o(3)} \lbrace A \in GL(n,\mathbb{R}) \quad | \quad A^{T} = - A \rbrace
+\end{equation}
+
+\begin{oss}$\\$
+L'algebra $\mathfrak{so(3)}$ può essere identificata con lo spazio vettoriale $\mathbb{R}^{3}$ attraverso la mappa:
+\begin{equation}
+(\hat{\cdot}) : \mathbb{R}^{3} \rightarrow \mathfrak{so(3)} \qquad \vec{x}= \left[ \begin{array}{c}
+x_{1}\\
+x_{2}\\
+x_{3}\\
+\end{array} \right] \longmapsto \hat{x} := \left[ \begin{array}{ccc}
+0 & -x_{3} & +x_{2} \\
+x_{3} & 0 & -x_{1}\\
+-x_{2} & x_{1} & 0\\
+\end{array} \right]
+\end{equation}
+
+L'immagine di questa mappa è un operatore lineare su $\mathbb{R}^{3}$ che agisce come il prodotto vettoriale:
+\begin{displaymath}
+\hat{x} \vec{y} = \left[ \begin{array}{ccc}
+0 & -x_{3} & +x_{2} \\
+x_{3} & 0 & -x_{1}\\
+-x_{2} & x_{1} & 0\\
+\end{array} \right] \left[ \begin{array}{c}
+y_{1}\\
+y_{2}\\
+y_{3}\\
+\end{array} \right] = \left[ \begin{array}{c}
+x_{2}y_{3} - x_{3}y_{2}\\
+x_{3}y_{1} - x_{1}y_{3}\\
+x_{1}y_{2} - x_{2}y_{1}\\
+\end{array} \right] = \vec{x} \wedge \vec{y}
+\end{displaymath}
+
+La proprietà notevole di questa mappa è che costituisce un isomorfismo tra le algebre $\mathfrak{so(3)}$ e $\mathbb{R}^{3}$, ovvero un'applicazione lineare biunivoca $\rho:\mathfrak{g} \rightarrow \mathfrak{h}$ tale che: $$\rho \bigr([\xi,\eta] \bigr) =\bigr[\rho(\xi), \rho(\eta) \bigr] \qquad \forall \xi , \eta \in \mathfrak{g} $$
+Un modo per dimostrarlo è verificare l'equazione $ [\hat{x}, \hat{y}] = - \hat{\vec{x}\wedge {y}}$ sfruttanto l'identità di Jacobi per il prodotto vettoriale.
+
+
+Questa rappresentazione vettoriale dell'algebra del gruppo delle rotazioni permetterà una più semplice interpretazione delle strutture del gruppo.
+\end{oss} 
+
+\begin{oss}
+Una possibile scelta comoda per una base di $\mathfrak{so(3)}$ è rappresentata dalle matrici:
+\begin{figure}[!h]
+\mbox{%
+
+	\begin{minipage}{.33\textwidth}	
+\begin{displaymath}\small
+A_{1} = \left[ \begin{array}{ccc}
+0 & 0 &0  \\
+0 & 0 & 1 \\
+0 & -1 & 0 \\
+\end{array} \right]
+\end{displaymath}	
+	\end {minipage}
+
+	\begin{minipage}{.33\textwidth}	
+\begin{displaymath}\small
+A_{2} = \left[ \begin{array}{ccc}
+0 & 0 & -1  \\
+0 & 0 & 0 \\
+1 & 0 & 0 \\
+\end{array} \right]
+\end{displaymath}	
+\end {minipage}
+
+	\begin{minipage}{.33\textwidth}	
+\begin{displaymath}\small
+A_{3} = \left[ \begin{array}{ccc}
+0 & 1 & 0  \\
+-1 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{array} \right]
+\end{displaymath}	
+\end {minipage}%
+		}
+\end{figure}
+
+che per l'isomorfismo precedente corrispondo alle relazioni $ A_{i} := -\hat{e_{i}}$ dove con $e_{i}$ si intendo i versori di $\mathbb{R}^{3}$.
+La scelta di questa base non è casuale: sfruttando il teorema (\ref(teo:esponenzialematrici)) e calcolando direttamente la mappa esponenziale, si verifica che queste matrici sono i \emph{generatori} , nel senso chiarito nei capitoli precedenti, delle rotazioni passive attorno agli assi $(x,y,z)$ del sistema di riferimento:
+$$e^{A_{i}} = R_{e_{i}}(\theta) $$
+
+\end{oss}
+
+\section{1-Forma di Maurer-Cartan}
+Le matrici rappresentative delle 1-forme di Maurer-Cartan ammettono un' interpretazione meccanica legata al concetto di \emph{velocità angolare}.
+Nel capitolo precedente è stato mostrato il legame tra il gruppo delle rotazioni, quindi $SO(3)$, e lo spazio di configurazione di un corpo rigido con punto fisso.
+
+\subsection{Significato meccanico delle 1-forme invarianti}
+Esiste un legame tra le matrici ap
+
+\section{Campi invarianti su SO(3)}
+
+
+\section{1-Forme invarianti su SO(3)}
+Le due base dei campi invarianti, a sinistra o a destra,  costituiscono una scelta alternativa alla base naturale permessa specificatamente dalla struttura di gruppo di Lie.
+Si vuole a questo punto esplicitare il duale di questa base: la base delle 1-forme invarianti.
+
+Ai tre campi invarianti $ X_{1}, X_{2}, X_{3}$ (il procedimento è analogo sia per i campi a destra che per quelli a sinistra) definiti in precedenza è possibile associare le tre 1-forme $\epsilon^{1}, \epsilon^{2}, \epsilon^{3}$ che verificano la relazione di dualità:
+\begin{equation}
+\epsilon^{i} \bigr( X_{j} \bigr) = \delta^{i}_{j}
+\end{equation}
+Queste tre 1-forme, assumendo valore costante sui campi invarianti, sono 1-forme invarianti; più esattamente sono una \emph{base di 1-forme invarianti}.
+
+A questo punto è possibile procurarsi l'espressione delle componenti di queste 1-forme sulla base dei differenziali delle coordinate di Eulero.
+
+Ponendo
+\begin{displaymath}
+\epsilon^{i} = \epsilon^{i} _{\psi} \textrm{d}\theta +\epsilon^{i} _{\theta} \textrm{d}\phi +\epsilon^{i} _{\psi} \textrm{d}\phi
+\end{displaymath}
+
+con $i \in \lbrace1,2,3 \rbrace$, risulta:
+\begin{displaymath}
+\epsilon^{i} \bigr( X_{j} \bigr) = \epsilon^{i} _{\psi} \textrm{d}\theta\bigr( X_{j} \bigr) +\epsilon^{i} _{\theta} \textrm{d}\phi\bigr( X_{j} \bigr) +\epsilon^{i} _{\psi} \textrm{d}\phi\bigr( X_{j} \bigr) = \epsilon^{i} _{\psi} X_{j}^{\psi} +\epsilon^{i} _{\theta} X_{j}^{\theta} +\epsilon^{i} _{\psi} X_{j}^{\psi} = \delta_{i}^{j}
+\end{displaymath}
+
+con $i,j \in \lbrace1,2,3 \rbrace$ quindi si ottiene un sistema di nove equazioni.
+
+In forma matriciale le condizione di dualità si scrivono come:
+\begin{equation}\label{eq:sistemamatriciduali}\small
+\left[ \begin{array}{ccc}
+\epsilon_{\psi}^{1} & \epsilon_{\theta}^{1} & \epsilon_{\phi}^{1}  \\
+\epsilon_{\psi}^{2} & \epsilon_{\theta}^{2} & \epsilon_{\phi}^{2} \\
+\epsilon_{\psi}^{3} & \epsilon_{\theta}^{3} & \epsilon_{\phi}^{3} \\
+\end{array} \right] \left[ \begin{array}{ccc}
+X_{1}^{\psi} & X_{2}^{\psi} & X_{3}^{\psi}  \\
+X_{1}^{\theta} & X_{2}^{\theta} & X_{3}^{\theta} \\
+X_{1}^{\phi} & X_{2}^{\phi} & X_{3}^{\phi} \\
+\end{array} \right] = \left[ \begin{array}{ccc}
+1 & 0 & 0  \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array} \right]
+\end{equation}
+In altra parole, la matrice che ha per righe le componenti delle 1-forme invarianti a destra$/$sinitra sulla base dei differenziali $\textrm{d}\psi, \textrm{d}\theta ,\textrm{d}\phi $ degli angoli di Eulero è l'inverso della matrice che ha per colonne e componenti della base dei campi invarianti a destra$/$sinitra sulla base naturale $(\dfrac{\partial}{\partial \psi},\dfrac{\partial}{\partial \theta},\dfrac{\partial}{\partial \phi})$ associata alle coordinate di Eulero.
+
+Risolvendo il sistema (\ref{eq:sistemamatriciduali}) si ottiene, per i campi invarianti a destra:
+\begin{equation}\label{eq:formeinvariantisinistracomponenti}
+\lbrace \begin{array}{rcl}
+\epsilon_{R}^{1} & = & \sin(\theta) \sin(\phi) \textrm{d}\psi + \cos(\phi)\textrm{d}\theta \\
+\epsilon_{R}^{2} & = & \sin(\theta)\cos(\phi)\textrm{d}\psi - \sin(\phi)\textrm{d}\theta \\
+\epsilon_{R}^{3} & = & \cos(\theta)\textrm{d}\psi + \textrm{d}\phi \\
+\end{array}
+\end{equation} 
+Mentre per i campi invarianti a sinista:
+\begin{equation}\label{eq:formeinvariantidestracomponenti}
+\lbrace \begin{array}{rcl}
+\epsilon_{L}^{1} & = & \sin(\psi)\sin(\theta)\textrm{d}\phi + \cos(\psi)\textrm{d}\theta  \\
+\epsilon_{L}^{2} & = & \sin(\psi)\textrm{d} \theta - \cos(\psi)\sin(\theta)\textrm{d}\phi \\
+\epsilon_{L}^{3} & = & \textrm{d}\psi + \cos(\theta)\textrm{d}\phi \\
+\end{array}
+\end{equation}
+
+La soluzione del sistema esiste solo quando la matrice dei coefficienti dei campi invarianti è invertibile, siccome sia per i campi invarianti a destra che per quelli a sinistra la matrice ha determinante $ sin(\theta)^{-1}$, la soluzione è sempre definita per $ \theta\neq 0$ quindi in ogni punto in cui il sistema di coordinate di Eulero è definito.
+
+\subsection{Significato meccanico delle 1-forme invarianti}
+Anche queste 1-forme hanno un'interessante interpretazione meccanica legata al concetto di \emph{rotazione infinitesima}.
+É noto, dalla teoria del corpo rigido, che il passaggio dalla configurazione individuata da $(\psi, \theta , \phi)$ alla configurazione individuata da $(\psi + \textrm{d}\psi, \theta + \textrm{d}\theta , \phi + \textrm{d}\phi )$ ( dove con $\textrm{d}\cdot$ si intende in senso intuitivo una quantità piccola a piacere) è una rotazione infinitesima
+\begin{displaymath}
+\textrm{d} P = \vec{\epsilon} \wedge \vec{OP}
+\end{displaymath}
+dove il vettore rotazione infinitesimo $\vec{\epsilon}$ è dato (per il principio di composizione delle rotazioni infinitesime) da :
+\begin{displaymath}
+\vec{\epsilon} = \textrm{d}\psi \vec{K} + \textrm{d}\theta \vec{l}\small(\psi)+ \textrm{d}\phi \vec{k}(\small\theta,\phi)
+\end{displaymath}
+
+Questo vettore può essere decomposto (oltrechè sulla base di Lagrange $(\vec{K} , \vec{l} , \vec{k})$) anche sulle altre due base notevoli che intervengono nella cinematica del corpo rigido: la base fissa nello spazio $(\vec{I}, \vec{J}, \vec{K}) $ e la base solidale con il corpo rigido $(\vec{i}, \vec{j}, \vec{k}) $.
+Sono queste le basi che sono state utilizzate per definire gli angoli di Eulero.
+
+Dalle equazioni (\ref{}) e (\ref{}) che danno la decomposizione della base di Lagrange su queste due basi si trova che:
+\begin{equation}\small
+\vec{\epsilon}= [\cos(\psi)\textrm{d}\theta \, + \, \sin(\psi)\sin(\theta)\textrm{d}\phi] \vec{I} \, + \, [\sin(\psi)\textrm{d}\theta - \cos(\psi) \sin(\theta)\textrm{d}\phi] \vec{J} \, + \, [\textrm{d}\phi + \cos(\theta)\textrm{d}\phi]\vec{K} =
+=[\sin(\theta)\cos(\phi)\textrm{d}\psi + \cos(\phi)\textrm{d}\theta] \vec{i}\, + \, [\sin(\theta)\cos(\phi)\textrm{d}\psi - \sin(\phi)\textrm{d}\theta]\vec{j} \, + \, [\cos(\theta)\textrm{d}\psi + \textrm{d}\phi]\vec{k}
+\end{equation}
+
+
+Dove si riconosce che le tre coordinate del vettore rotazione infinitesima sulla \emph{base fissa} corrispondono alle tre 1-forme invarianti a \emph{sinistra} decomposte sulla base naturale duale ( equazione \ref{eq:formeinvariantisinistracomponenti}) mentre le coordinate sulla \emph{base solidale} al corpo rigido coincidono alle tre 1-forme invarianti a \emph{destra} decomposte sulla base naturale duale ( equazione \ref{eq:formeinvariantidestracomponenti}).
+
+
+
+
+
+
+\section{Azioni Aggiunte su SO(3)}
+Nel capitolo II sono state ottenute l'espressioni esplicite per le azioni aggiunte su un generico gruppo di Lie di matrici.
+
+Sfruttando l'isomorfismo dato dalla mappa $\widehat{}$, sia $R$ generico elemento del gruppo, $\widehat{\Omega}$ matrice dell'algebra $\mathfrak{so(3)}$ e $\vec{\Omega}$ vettore ad esso associato, l'azione aggiunta sul gruppo $SO(3)$ risulta una matrice:
+\begin{displaymath}
+\bigr( Ad_{R}\widehat{\Omega}\bigr) \vec{w} = \bigr( R \widehat{\Omega} R^{-1}\bigr) \vec{w} = R \Bigr(\widehat{\Omega}  \bigr(R^{-1}\vec{w}\bigr) \Bigr) = R \Bigr(\vec{\Omega} \wedge (R^{-1}\vec{w}) \Bigr) = ( R \vec{\Omega}) \wedge (R R^{-1} \vec{w} ) = R \vec{\Omega} \wedge \vec{w} = \widehat{R \vec{\Omega}} \vec{w}  
+\end{displaymath}
+Con $\vec{w}$ generico vettore di $\mathbb{R}^{3}$, pertanto si conclude che
+
+\begin{equation}
+Ad_{R}\widehat{\Omega} = \widehat{R \vec{\Omega}}
+\end{equation}
+
+Similmente l'azione aggiunta dell'algebra su se stessa, espressa per il generico gruppo di matrice dell'equazione (\ref{eq:}), risulta in questo specifico caso:
+\begin{equation}
+ad_{\widehat{\omega_{1}}} \widehat{\omega_{2}} = \bigr[ \widehat{\omega_{1}},\widehat{\omega_{2}} \bigr] = \widehat{\omega_{1} \wedge \omega_{2}}
+\end{equation}
+con $\widehat{\omega_{1}},\widehat{\omega_{2}}$ generiche matrici dell'algebra $\mathfrak{so(3)}$, e $\omega_{1},\omega_{2}$ vettori di $\mathbb{R}^{3}$ ad esse associati.
+
+Applicando l'espressione (\ref{})  ottenuta per il generico gruppo di matrici e ricordando che l'algebra $\mathfrak{so(3)}$ è costituita da matrici antisimmetriche, si ottiene l'azione coaggiunta nella forma:
+
+\begin{displaymath}
+ad_{A}^{\ast} M = \bigr[M, -A^{T}\bigr] = \bigr[M, A\bigr]
+\end{displaymath}
+
+Si vuole ottenere anche per questa equazione una relazione vettoriale nello spirito dell'isomorfismo della mappa $\widehat{ }$ quindi è necessario considerare il corrispettivo isomorfismo esistente tra $\mathbb{R}^{3}$ e il duale del'algebra.
+
+\begin{oss}[Isomorfismo tra covettori di $\mathfrak{so(3)}^{\ast}$ e $\mathbb{R}^{3}$]
+Il duale dell'algebra $\mathfrak{so(3)}^{\ast}$ può essere identificato con lo spazio vettoriale $\mathbb{R}^{3}$ attraverso la mappa $\breve{\cdot} : \mathbb{R}^{3} \longleftrightarrow \mathfrak{so(3)}^{\ast}$ tale che:
+
+\begin{equation}
+\breve{M} ( \widehat{x}) = < \breve{M} , \widehat{x} > := M_{1}x_{1} + M_{2}x_{2} + M_{3}x_{3} = \vec{M} \cdot \vec{x} \qquad \forall x \in \mathbb{R}^{3} 
+\end{equation}
+
+Per un generale gruppo matrici varrebbe la relazione:
+$$<\breve{\pi} , \hat{x} > = \dfrac{1}{2}\textrm{Tr}(\breve{\pi},\hat{x}) = \dfrac{1}{2}\textrm{Tr}(\breve{\pi},\hat{x})^{T} = <\hat{x} , \breve{\pi} >  $$
+che esprime la corrispondenza tra vettori e covettori in uno spazio di matrici.
+
+Siccome per due generici vettori $u$ e $v$ di $\mathbb{R}^{3}$ vale la relazione:
+\begin{displaymath}
+u \cdot v = -\frac{1}{2}\textrm{Tr}(\hat{u}\,\hat{v}) = \dfrac{1}{2}\textrm{Tr}(\hat{u}\,\hat{v}^{T})
+\end{displaymath}
+
+(dimostrabile con un calcolo diretto a partire dalla definizione della mappa $\widehat{}$) che porta a concludere che:
+\begin{displaymath}
+\pi ( x) = < \breve{\pi}, \hat{x}> = \vec{\pi}\cdot \vec{x} = \dfrac{1}{2}\textrm{Tr}(\hat{u}\,\hat{v}^{T}) = < \hat{\pi},\hat{x}>
+\end{displaymath}
+
+Pertanto le matrici $\hat{x}$ e $\breve{x}$ associate al vettore $\vec{x} \in \mathbb{R}^{3}$, che rappresentano rispettivamente un vettore dell'algebra e un covettore nel duale, sono in realtà coincidenti e questo fornisce un criterio di costruzione per la matrice $\breve{x}$.
+\end{oss}
+
+Quindi siano $ \breve{L} \in \mathfrak{so(3)}^{\ast}$ e $\hat{\omega_{1}} , \hat{\omega_{2}} \in \mathfrak{so(3)}$ generici elementi e $\vec{\omega_{1}},\vec{\omega_{2}}\vec{L}$ i vettori associati secondo gli isomorfismi precedenti, vale che:
+
+\begin{displaymath}
+< ad_{\hat{\omega_{1}}}^{\ast} \breve{L} , \hat{\omega_{2}} > = < \breve{L}, ad_{\hat{\omega_{1}}} \hat{\omega_{2}}> = <\breve{L},[\hat{\omega_{1}},\hat{\omega_{2}}]> = <\breve{L}, \widehat{\vec{\omega_{1}} \wedge \vec{\omega_{2}}} > = \vec{L} \wedge \vec{\omega_{1}} \cdot \vec{\omega_{2}} = < \breve{\vec{L} \wedge \vec{\omega_{1}}}, \omega_{2}>
+\end{displaymath}
+
+pertanto.
+\begin{equation}
+ad_{\hat{\omega_{1}}}^{\ast} \breve{L} = \breve{\vec{L} \wedge \vec{\omega}} = \small
+\left[ \begin{array}{ccc}
+0 & L_{1}\omega_{2}  - L_{2}\omega_{1}  & -L_{3}\omega_{1}  + L_{1}\omega_{3}   \\
+-L_{1}\omega_{2}  + L_{2}\omega_{1} & 0 & L_{2}\omega_{3}  - L_{3}\omega_{2} \\
+L_{3}\omega_{1}  - L_{1}\omega_{3}  & -L_{2}\omega_{3}  + L_{3}\omega_{2} & 0 \\
+\end{array} \right]
+\end{equation}
+
+D'ora in poi si sottointenderà la specificazione delle mappe che realizzano gli isomorfismi: gli elementi dell'algebra e del duale verranno indicati senza accenti, il simbolo $\vec{}$ rimarrà per indicare i vettori associati.
+
+
+\clearpage
+\begin{thebibliography}{99}
+\bibitem{recipe}\emph{Numerical recipes in C++}
+\bibitem{knuth}Knuth D. \emph{The Art of Computer Programming}
+\bibitem{hilde}Hildebrand F. \emph{Introduction to Numerical Analysis}, 2nd.ed.
+\end{thebibliography}
+\end{document}
+
+
+

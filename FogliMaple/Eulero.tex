@@ -1,0 +1,64 @@
+%% Created by Maple 13.0, Linux
+%% Source Worksheet: Eulero.mw
+%% Generated: Wed Oct 27 13:30:36 CEST 2010
+\documentclass{article}
+\usepackage{maplestd2e}
+\def\emptyline{\vspace{12pt}}
+\begin{document}
+\pagestyle{empty}
+\DefineParaStyle{Maple Heading 1}
+\DefineParaStyle{Maple Text Output}
+\DefineParaStyle{Maple Dash Item}
+\DefineParaStyle{Maple Bullet Item}
+\DefineParaStyle{Maple Normal}
+\DefineParaStyle{Maple Heading 4}
+\DefineParaStyle{Maple Heading 3}
+\DefineParaStyle{Maple Heading 2}
+\DefineParaStyle{Maple Warning}
+\DefineParaStyle{Maple Title}
+\DefineParaStyle{Maple Error}
+\DefineCharStyle{Maple Hyperlink}
+\DefineCharStyle{Maple 2D Math}
+\DefineCharStyle{Maple Maple Input}
+\DefineCharStyle{Maple 2D Output}
+\DefineCharStyle{Maple 2D Input}
+\mapleinline{inert}{2d}{A := Matrix(%id = 164757692)}{\[\displaystyle A\, := \, \left[ \begin {array}{ccc} \cos \left( \psi \right) &\sin \left( \psi \right) &0\\ \noalign{\medskip}-\sin \left( \psi \right) &\cos \left( \psi \right) &0\\ \noalign{\medskip}0&0&1\end {array} \right] \]}
+\begin{maplegroup}
+
+\begin{maplelatex}
+\mapleinline{inert}{2d}{Matrix(%id = 167226188)}{\[\displaystyle  \left[ \begin {array}{ccc} \cos \left( \psi \right) &\sin \left( \psi \right) &0\\ \noalign{\medskip}-\sin \left( \psi \right) &\cos \left( \psi \right) &0\\ \noalign{\medskip}0&0&1\end {array} \right] \]}
+\end{maplelatex}
+\end{maplegroup}
+\mapleinline{inert}{2d}{B := Matrix(%id = 167973456)}{\[\displaystyle B\, := \, \left[ \begin {array}{ccc} 1&0&0\\ \noalign{\medskip}0&\cos \left( \theta \right) &\sin \left( \theta \right) \\ \noalign{\medskip}0&-\sin \left( \theta \right) &\cos \left( \theta \right) \end {array} \right] \]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{Matrix(%id = 168948368)}{\[\displaystyle  \left[ \begin {array}{ccc} 1&0&0\\ \noalign{\medskip}0&\cos \left( \theta \right) &\sin \left( \theta \right) \\ \noalign{\medskip}0&-\sin \left( \theta \right) &\cos \left( \theta \right) \end {array} \right] \]}
+\end{maplelatex}
+\end{maplegroup}
+\mapleinline{inert}{2d}{C := Matrix(%id = 169704668)}{\[\displaystyle C\, := \, \left[ \begin {array}{ccc} \cos \left( \phi \right) &\sin \left( \phi \right) &0\\ \noalign{\medskip}-\sin \left( \phi \right) &\cos \left( \phi \right) &0\\ \noalign{\medskip}0&0&1\end {array} \right] \]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{Matrix(%id = 170027124)}{\[\displaystyle  \left[ \begin {array}{ccc} \cos \left( \phi \right) &\sin \left( \phi \right) &0\\ \noalign{\medskip}-\sin \left( \phi \right) &\cos \left( \phi \right) &0\\ \noalign{\medskip}0&0&1\end {array} \right] \]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\mapleinline{inert}{2d}{R := C*B*A}{\[\displaystyle R\, := \,CBA\]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{Matrix(%id = 164758524)}{\[\displaystyle  \left[ \begin {array}{ccc} \cos \left( \phi \right) \cos \left( \psi \right) -\sin \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right) &\cos \left( \phi \right) \sin \left( \psi \right) +\sin \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right) &\sin \left( \phi \right) \sin \left( \theta \right) \\ \noalign{\medskip}-\sin \left( \phi \right) \cos \left( \psi \right) -\cos \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right) &-\sin \left( \phi \right) \sin \left( \psi \right) +\cos \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right) &\cos \left( \phi \right) \sin \left( \theta \right) \\ \noalign{\medskip}\sin \left( \psi \right) \sin \left( \theta \right) &-\cos \left( \psi \right) \sin \left( \theta \right) &\cos \left( \theta \right) \end {array} \right] \]}
+\end{maplelatex}
+\end{maplegroup}
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+\end{document}

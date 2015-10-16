@@ -1,0 +1,100 @@
+\chapter{Hamel Boltzman in astratto}
+\begin{itemize}
+
+\item[-] Sia $G$ gruppo di Lie e $x^{i}$ un sistema di coordinate su $G$.
+Siano $ \epsilon^{a}$ vettori di una base di 1-forme invarianti a destra.
+
+\item[-]Allora $A^{a}_{j}$ sono le componenti della matrice A delle componenti della base delle 1-forme invarianti a destra sulla base duale $\textrm{d}x^{j}$ tale che
+\begin{displaymath}
+\left[ \begin{array}{c} \epsilon ^{1} \\ \epsilon ^{2} \\ \vdots \\ \end{array} \right]
+ = A \left[ \begin{array}{c} \textrm{d} x^{1} \\ \textrm{d} x^{2} \\ \vdots \\ \end{array} \right] \qquad \epsilon^{a} = A^{a}_{j} \, \textrm{d}x^{j}
+\end{displaymath} 
+
+\item[-]di conseguenza
+\begin{equation}\label{basedualespuntata}
+\textrm{d} x^{j} = B^{j}_{a} \epsilon^{a} \qquad \textrm{con} \qquad A^{i}_{l}B^{l}_{j} = B^{i}_{k} A^{k}_{j} = \delta ^{i}_{j}
+\end{equation}
+ovvero $A = B^{-1}$ .
+
+Introducendo il duale della base duale, quindi una base di campi invarianti a destra $X_{b}$ risulta che:
+\begin{displaymath}
+\delta^{a}_{b} = \epsilon^{a}(\,X_{b}) = A^{a}_{j}\, \textrm{d}x^{j}(X_{b})
+\end{displaymath}
+quindi l'inverso della matrice $A$ è la matrice delle componenti della base dei campi invarianti a destra sulla base naturale associata alle coordinate:
+\begin{displaymath}
+\Rightarrow \, \textrm{d}x^{j}(X_{b}) = B^{j}_{a} \, \delta^{a}_{b}
+\end{displaymath}
+
+\item[-] per valutazione di un arbitrario vettore tangente si ottiene:
+\begin{displaymath}
+v^{a} = \epsilon^{a} ( v ) = A^{a}_{j} \, \textrm{d}x^{j} (v) = A^{a}_{j} \dot{x}^{j}
+\end{displaymath}
+che definisce esplicitamente le quasi velocità e la relazione di cambio di coordinate di un generico vettore nelle due basi.
+
+\item[-] Differenziando la formula precedente si ottiene che:
+
+\begin{displaymath}
+\textrm{d} v^{a} = A^{a}_{\,j} \, \textrm{d} \dot{x}^{j} + \dfrac{\partial A^{a}_{\,l}}{\partial x^{k}}\, \dot{x}^{l} \, \textrm{d} x^{k}
+\end{displaymath}
+quindi
+\begin{equation}\label{basedualepuntata}
+\textrm{d}\dot{x}^{j} = B^{j}_{\,a} \textrm{d} v^{a} - B^{j}_{\,a}\dfrac{\partial A^{a}_{\,l}}{\partial x^{k}}\, \dot{x}^{l} \, \textrm{d} x^{k} = B^{j}_{\,a} \textrm{d} v^{a} - \Bigr(B^{j}_{\,a}  \dfrac{\partial A^{a}_{\,l}}{\partial x^{k}}\, \dot{x}^{l} B^{k}_{\, b} \Bigr) \epsilon^{b}
+\end{equation}
+
+le equazioni (\ref{basedualespuntata}) e ( \ref{basedualespuntata}) danno lo sviluppo della base duale sulla base scelta.
+
+\item[-] ora calcola la derivata temporale delle 1-forme invarianti
+
+\begin{displaymath}\begin{split}
+\frac{\textrm{d}}{\textrm{d}t} \epsilon^{a} & = \frac{\textrm{d}}{\textrm{d}t}\Bigr( A^{a}_{\: j}\, \textrm{d}x^{j} \Bigr) = \dfrac{\partial A^{a}_{\: j}}{\partial x^{l}}\, \dot{x}^{l}\, \textrm{d}x^{j} + A^{a}_{\: j}\, \textrm{d}\dot{x}^{j} =
+\dfrac{\partial A^{a}_{\: j}}{\partial x^{l}}\, \dot{x}^{l}\, B^{j}_{\: b}\, \epsilon^{b} + A^{a}_{\: j} \Bigr( B^{j}_{\: b} \, \textrm{d}v^{b} - B^{j}_{c} \dfrac{\partial A^{c}_{\: l}}{\partial x^{k}}\, \dot{x}^{l} \, B^{k}_{\: b}\Bigr)\, \epsilon^{b} = \\ & =
+\textrm{d} v^{a} + \Bigr( \dfrac{\partial A^{a}_{\:j}}{\partial x^{l}}B^{j}_{\: b} -   \dfrac{\partial A^{a}_{\: l}}{\partial x^{j}}B^{j}_{\: b}\Bigr)\, \dot{x}^{l} \, \epsilon^{b}
+\end{split}\end{displaymath}
+
+
+infine elimino $\dot{x}^{b}$ in favore delle quasi velocità ($\dot{x}^{l} = B^{l}_{\,c} v^{c}$). Si ottiene:
+\begin{displaymath}
+\dfrac{\textrm{d}}{\textrm{d}t} \epsilon^{a} = \textrm{d}v^{a} + \Bigr( \dfrac{ \partial A^{a}_{\,j}}{\partial x^{k}} B^{j}_{\,b}\,B^{k}_{\:c} -
+\dfrac{\partial A^{a}_{\,j}}{\partial x^{k}} B^{k}_{\,b}\,B^{j}_{c} \Bigr)\, v^{c} \, \epsilon^{b}
+\end{displaymath}
+
+\item[-] si intende dimostrare che il coefficiente tra parentesi coincide con i coefficienti di struttura del gruppo.
+I generici campi sulla varietà ammettono la seguente rappresentazione in coordinate sulla base naturale di G: $X = X^{i} \frac{\partial}{\partial x^{i}} $
+che chiaramente induce una interpretazione del campo come operatore di derivazione.
+Pertanto i campi invarianti a destra risultano:
+\begin{equation}\label{eq:componenticampi}
+X_{b} = \textrm{d}x^{i}\bigr(X_{b} \bigr)\, \frac{\partial}{\partial x^{i}} = B^{i}_{\, b}\, \frac{\partial}{\partial x^{i}}
+\end{equation}
+
+Il commutatore tra i campi invarianti risulta quindi:
+\begin{displaymath}\begin{split}
+[ X_{b} , X_{c} ] &= \bigr[ B^{j}_{\: b} \frac{\partial}{\partial x^{j}} \,,\, B^{k}_{\: c} \frac{\partial}{\partial x^{k}} \bigr] = B^{j}_{\: b} \frac{\partial}{\partial x^{j}} \bigr( B^{k}_{\: c} \frac{\partial}{\partial x^{k}} \bigr) - B^{k}_{\: c} \frac{\partial}{\partial x^{k}} \bigr( B^{j}_{\: b} \frac{\partial}{\partial x^{j}} \bigr) = \\ &= B^{k}_{\: b} \frac{\partial}{\partial x^{k}} \bigr( B^{j}_{\: c}  \bigr) \frac{\partial}{\partial x^{j}} - B^{k}_{\: c} \frac{\partial}{\partial x^{k}} \bigr( B^{j}_{\: b} \bigr)  \frac{\partial}{\partial x^{j}}  = \bigr( B^{k}_{\: b} \dfrac{\partial B^{j}_{\: c}}{\partial x^{k}} - B^{k}_{\: c} \dfrac{\partial B^{j}_{\: b}}{\partial x^{k}} \bigr) \, \frac{\partial}{\partial x^{j}} = \\ &=
+\Bigr( \dfrac{\partial B^{j}_{\: c}}{\partial x^{k}}\, B^{k}_{\: b} \, A^{a}_{\: j} - \dfrac{\partial B^{j}_{\: b}}{\partial x^{k}}\, B^{k}_{\: c} \, A^{a}_{\: j} \Bigr)\, X_{a}  
+\end{split}\end{displaymath}
+dove sono stati sfruttati nell'ordine il teorema di Scwartz, per cui le derivate seconde si elidono, e l'inverso dell'equazione (\ref{eq:componenticampi}).
+Per definizione, visto che in questo caso si parla di campi invarianti a destra, la quantità fra parentesi nell'ultima equazione coincide con le costanti di struttura cambiate di segno:
+
+\begin{displaymath}
+-C^{a}_{\,b\,c} = \Bigr( \dfrac{\partial B^{j}_{\: c}}{\partial x^{k}}\, B^{k}_{\: b} \, A^{a}_{\: j} - \dfrac{\partial B^{j}_{\: b}}{\partial x^{k}}\, B^{k}_{\: c} \, A^{a}_{\: j} \Bigr)
+\end{displaymath}
+
+Sfruttando il teorema di Liebniz è possibile esprimere l'equazione precedente in un modo equivalente:
+\begin{equation}\begin{split}
+\label{eq:strutturacampidesta}
+-C^{a}_{\,b\,c} &= 
+B^{k}_{\: b} \,  \frac{\partial }{\partial x^{k}}\, \bigr( B^{j}_{\: c} \, A^{a}_{\: j} \bigr)- B^{k}_{\: b}\, B^{j}_{\: c} \dfrac{\partial A^{a}_{j}}{\partial x^{k}} - 
+B^{k}_{\: c} \,\frac{\partial }{\partial x^{k}}\,\bigr(B^{j}_{\: b} \,  A^{a}_{\: j}\bigr)  
++ B^{k}_{\: c}\, B^{j}_{\: b} \dfrac{\partial A^{a}_{j}}{\partial x^{k}} = \\ &=
+B^{k}_{\: c}\, B^{j}_{\: b} \dfrac{\partial A^{a}_{j}}{\partial x^{k}} - B^{k}_{\: b}\, B^{j}_{\: c} \dfrac{\partial A^{a}_{j}}{\partial x^{k}}
+\end{split}\end{equation}
+in quanto $B^{j}_{\: b}A^{a}_{\: j}= \delta^{a}_{b}$.
+
+
+\item[-] è possibile ora confrontare l'espressione (\ref{eq:strutturacampidesta}) appena trovata con l'espressione della derivata temporale delle 1-forme invarianti. risulta che
+
+\begin{equation}
+\dfrac{\textrm{d}\epsilon^{a}}{\textrm{d}t} = \textrm{d}v^{a} - C^{a}_{\: b \, c}v^{c}\,\epsilon^{b}
+\end{equation}
+\end{itemize}
+
+Queste forumle sono l'estensione ad un gruppo di Lie arbitrario delle formule di Hamel-boltzman incontrate nella teoria del corpo rigido.

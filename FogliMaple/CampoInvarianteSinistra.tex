@@ -1,0 +1,484 @@
+%% Created by Maple 13.0, Linux
+%% Source Worksheet: CampoInvarianteSinistra.mw
+%% Generated: Fri Nov 05 15:19:33 CET 2010
+\documentclass{article}
+\usepackage{maplestd2e}
+\def\emptyline{\vspace{12pt}}
+\begin{document}
+\pagestyle{empty}
+\DefineParaStyle{Maple Heading 1}
+\DefineParaStyle{Maple Text Output}
+\DefineParaStyle{Maple Dash Item}
+\DefineParaStyle{Maple Bullet Item}
+\DefineParaStyle{Maple Normal}
+\DefineParaStyle{Maple Heading 4}
+\DefineParaStyle{Maple Heading 3}
+\DefineParaStyle{Maple Heading 2}
+\DefineParaStyle{Maple Warning}
+\DefineParaStyle{Maple Title}
+\DefineParaStyle{Maple Error}
+\DefineCharStyle{Maple Hyperlink}
+\DefineCharStyle{Maple 2D Math}
+\DefineCharStyle{Maple Maple Input}
+\DefineCharStyle{Maple 2D Output}
+\DefineCharStyle{Maple 2D Input}
+\mapleinline{inert}{2d}{}{$\displaystyle $}
+\mapleinline{inert}{2d}{A := Matrix(%id = 169115988)}{\[\displaystyle A\, := \, \left[ \begin {array}{ccc} \cos \left( \psi \right) &\sin \left( \psi \right) &0\\ \noalign{\medskip}-\sin \left( \psi \right) &\cos \left( \psi \right) &0\\ \noalign{\medskip}0&0&1\end {array} \right] \]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{Matrix(%id = 169116372)}{\[\displaystyle  \left[ \begin {array}{ccc} \cos \left( \psi \right) &\sin \left( \psi \right) &0\\ \noalign{\medskip}-\sin \left( \psi \right) &\cos \left( \psi \right) &0\\ \noalign{\medskip}0&0&1\end {array} \right] \]}
+\end{maplelatex}
+\end{maplegroup}
+\textbf{}\mapleinline{inert}{2d}{B := Matrix(%id = 171853600)}{\[\displaystyle B\, := \, \left[ \begin {array}{ccc} 1&0&0\\ \noalign{\medskip}0&\cos \left( \theta \right) &\sin \left( \theta \right) \\ \noalign{\medskip}0&-\sin \left( \theta \right) &\cos \left( \theta \right) \end {array} \right] \]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{Matrix(%id = 173379652)}{\[\displaystyle  \left[ \begin {array}{ccc} 1&0&0\\ \noalign{\medskip}0&\cos \left( \theta \right) &\sin \left( \theta \right) \\ \noalign{\medskip}0&-\sin \left( \theta \right) &\cos \left( \theta \right) \end {array} \right] \]}
+\end{maplelatex}
+\end{maplegroup}
+\textbf{}\mapleinline{inert}{2d}{C := Matrix(%id = 174136120)}{\[\displaystyle C\, := \, \left[ \begin {array}{ccc} \cos \left( \phi \right) &\sin \left( \phi \right) &0\\ \noalign{\medskip}-\sin \left( \phi \right) &\cos \left( \phi \right) &0\\ \noalign{\medskip}0&0&1\end {array} \right] \]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{Matrix(%id = 173551472)}{\[\displaystyle  \left[ \begin {array}{ccc} \cos \left( \phi \right) &\sin \left( \phi \right) &0\\ \noalign{\medskip}-\sin \left( \phi \right) &\cos \left( \phi \right) &0\\ \noalign{\medskip}0&0&1\end {array} \right] \]}
+\end{maplelatex}
+\end{maplegroup}
+\textbf{}\mapleinline{inert}{2d}{R := C*B*A}{\[\displaystyle R\, := \,CBA\]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{Matrix(%id = 169116884)}{\[\displaystyle  \left[ \begin {array}{ccc} \cos \left( \phi \right) \cos \left( \psi \right) -\sin \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right) &\cos \left( \phi \right) \sin \left( \psi \right) +\sin \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right) &\sin \left( \phi \right) \sin \left( \theta \right) \\ \noalign{\medskip}-\sin \left( \phi \right) \cos \left( \psi \right) -\cos \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right) &-\sin \left( \phi \right) \sin \left( \psi \right) +\cos \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right) &\cos \left( \phi \right) \sin \left( \theta \right) \\ \noalign{\medskip}\sin \left( \psi \right) \sin \left( \theta \right) &-\cos \left( \psi \right) \sin \left( \theta \right) &\cos \left( \theta \right) \end {array} \right] \]}
+\end{maplelatex}
+\end{maplegroup}
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+\mapleinline{inert}{2d}{e[1] := map(diff, R, psi)}{\[\displaystyle e_{{1}}\, := \,{\it map} \left( {\it diff},R,\psi \right) \]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{Matrix(%id = 169117652)}{\[\displaystyle  \left[ \begin {array}{ccc} -\cos \left( \phi \right) \sin \left( \psi \right) -\sin \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right) &\cos \left( \phi \right) \cos \left( \psi \right) -\sin \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right) &0\\ \noalign{\medskip}\sin \left( \phi \right) \sin \left( \psi \right) -\cos \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right) &-\sin \left( \phi \right) \cos \left( \psi \right) -\cos \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right) &0\\ \noalign{\medskip}\cos \left( \psi \right) \sin \left( \theta \right) &\sin \left( \psi \right) \sin \left( \theta \right) &0\end {array} \right] \]}
+\end{maplelatex}
+\end{maplegroup}
+\textbf{}\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\mapleinline{inert}{2d}{e[2] := map(diff, R, theta)}{\[\displaystyle e_{{2}}\, := \,{\it map} \left( {\it diff},R,\theta \right) \]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{Matrix(%id = 182852320)}{\[\displaystyle  \left[ \begin {array}{ccc} \sin \left( \phi \right) \sin \left( \theta \right) \sin \left( \psi \right) &-\sin \left( \phi \right) \sin \left( \theta \right) \cos \left( \psi \right) &\sin \left( \phi \right) \cos \left( \theta \right) \\ \noalign{\medskip}\cos \left( \phi \right) \sin \left( \theta \right) \sin \left( \psi \right) &-\cos \left( \phi \right) \sin \left( \theta \right) \cos \left( \psi \right) &\cos \left( \phi \right) \cos \left( \theta \right) \\ \noalign{\medskip}\sin \left( \psi \right) \cos \left( \theta \right) &-\cos \left( \psi \right) \cos \left( \theta \right) &-\sin \left( \theta \right) \end {array} \right] \]}
+\end{maplelatex}
+\end{maplegroup}
+\textbf{}\mapleinline{inert}{2d}{e[3] := map(diff, R, phi)}{\[\displaystyle e_{{3}}\, := \,{\it map} \left( {\it diff},R,\phi \right) \]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{Matrix(%id = 169118420)}{\[\displaystyle  \left[ \begin {array}{ccc} -\sin \left( \phi \right) \cos \left( \psi \right) -\cos \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right) &-\sin \left( \phi \right) \sin \left( \psi \right) +\cos \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right) &\cos \left( \phi \right) \sin \left( \theta \right) \\ \noalign{\medskip}-\cos \left( \phi \right) \cos \left( \psi \right) +\sin \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right) &-\cos \left( \phi \right) \sin \left( \psi \right) -\sin \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right) &-\sin \left( \phi \right) \sin \left( \theta \right) \\ \noalign{\medskip}0&0&0\end {array} \right] \]}
+\end{maplelatex}
+\end{maplegroup}
+\textbf{}\mapleinline{inert}{2d}{"A1 A2 A3 sono elementi della base sull'algebra di so(3)"}{\[\displaystyle ``A1 A2 A3 sono elementi della base sull'algebra di so(3)''\]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{"A1 A2 A3 sono elementi della base sull'algebra di so(3)"}{\[\displaystyle ``A1 A2 A3 sono elementi della base sull'algebra di so(3)''\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\mapleinline{inert}{2d}{"campo invariante a sinistra di A1"}{\[\displaystyle ``campo invariante a sinistra di A1''\]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{"campo invariante a sinistra di A1"}{\[\displaystyle ``campo invariante a sinistra di A1''\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{$\displaystyle $}
+\mapleinline{inert}{2d}{}{$\displaystyle $}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\mapleinline{inert}{2d}{A1 := Matrix(%id = 189422736)}{\[\displaystyle {\it A1}\, := \, \left[ \begin {array}{ccc} 0&0&0\\ \noalign{\medskip}0&0&1\\ \noalign{\medskip}0&-1&0\end {array} \right] \]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{Matrix(%id = 190287296)}{\[\displaystyle  \left[ \begin {array}{ccc} 0&0&0\\ \noalign{\medskip}0&0&1\\ \noalign{\medskip}0&-1&0\end {array} \right] \]}
+\end{maplelatex}
+\end{maplegroup}
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\mapleinline{inert}{2d}{CampoSinis := R*A1}{\[\displaystyle {\it CampoSinis}\, := \,R{\it A1}\]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{Matrix(%id = 191980368)}{\[\displaystyle  \left[ \begin {array}{ccc} 0&-\sin \left( \phi \right) \sin \left( \theta \right) &\cos \left( \phi \right) \sin \left( \psi \right) +\sin \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right) \\ \noalign{\medskip}0&-\cos \left( \phi \right) \sin \left( \theta \right) &-\sin \left( \phi \right) \sin \left( \psi \right) +\cos \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right) \\ \noalign{\medskip}0&-\cos \left( \theta \right) &-\cos \left( \psi \right) \sin \left( \theta \right) \end {array} \right] \]}
+\end{maplelatex}
+\end{maplegroup}
+\textbf{}\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\mapleinline{inert}{2d}{f := x*e[1]+y*e[2]+z*e[3]-CampoSinis}{\[\displaystyle f\, := \,xe_{{1}}+ye_{{2}}+ze_{{3}}-{\it CampoSinis}\]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{Matrix(%id = 168554020)}{\[\displaystyle  \left[ \begin {array}{ccc} x \left( -\cos \left( \phi \right) \sin \left( \psi \right) -\sin \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right)  \right) +y\sin \left( \phi \right) \sin \left( \theta \right) \sin \left( \psi \right) +z \left( -\sin \left( \phi \right) \cos \left( \psi \right) -\cos \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right)  \right) &x \left( \cos \left( \phi \right) \cos \left( \psi \right) -\sin \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right)  \right) -y\sin \left( \phi \right) \sin \left( \theta \right) \cos \left( \psi \right) +z \left( -\sin \left( \phi \right) \sin \left( \psi \right) +\cos \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right)  \right) +\sin \left( \phi \right) \sin \left( \theta \right) &y\sin \left( \phi \right) \cos \left( \theta \right) +z\cos \left( \phi \right) \sin \left( \theta \right) -\cos \left( \phi \right) \sin \left( \psi \right) -\sin \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right) \\ \noalign{\medskip}x \left( \sin \left( \phi \right) \sin \left( \psi \right) -\cos \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right)  \right) +y\cos \left( \phi \right) \sin \left( \theta \right) \sin \left( \psi \right) +z \left( -\cos \left( \phi \right) \cos \left( \psi \right) +\sin \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right)  \right) &x \left( -\sin \left( \phi \right) \cos \left( \psi \right) -\cos \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right)  \right) -y\cos \left( \phi \right) \sin \left( \theta \right) \cos \left( \psi \right) +z \left( -\cos \left( \phi \right) \sin \left( \psi \right) -\sin \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right)  \right) +\cos \left( \phi \right) \sin \left( \theta \right) &y\cos \left( \phi \right) \cos \left( \theta \right) -z\sin \left( \phi \right) \sin \left( \theta \right) +\sin \left( \phi \right) \sin \left( \psi \right) -\cos \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right) \\ \noalign{\medskip}x\cos \left( \psi \right) \sin \left( \theta \right) +y\sin \left( \psi \right) \cos \left( \theta \right) &x\sin \left( \psi \right) \sin \left( \theta \right) -y\cos \left( \psi \right) \cos \left( \theta \right) +\cos \left( \theta \right) &-y\sin \left( \theta \right) +\cos \left( \psi \right) \sin \left( \theta \right) \end {array} \right] \]}
+\end{maplelatex}
+\end{maplegroup}
+\textbf{}\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\mapleinline{inert}{2d}{solve({f[1, 1] = 0, f[1, 2] = 0, f[1, 3] = 0, f[2, 1] = 0, f[2, 2] = 0, f[2, 3] = 0, f[3, 1] = 0, f[3, 2] = 0, f[3, 3] = 0}, {x, y, z})}{\[\displaystyle {\it solve} \left(  \left\{ f_{{1,1}}=0,f_{{1,2}}=0,f_{{1,3}}=0,f_{{2,1}}=0,f_{{2,2\\
+\mbox{}}}=0,f_{{2,3}}=0,f_{{3,1}}=0,f_{{3,2}}=0,f_{{3,3}}=0 \right\} , \left\{ x,y,z \right\}  \right) \]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{{x = -sin(psi)*cos(theta)/sin(theta), y = cos(psi), z = sin(psi)/sin(theta)}}{\[\displaystyle  \left\{ x=-{\frac {\sin \left( \psi \right) \cos \left( \theta \right) }{\sin \left( \theta \right) }},y=\cos \left( \psi \right) ,z={\frac {\sin \left( \psi \right) }{\sin \left( \theta \right) }} \right\} \]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\mapleinline{inert}{2d}{"campo invariante a Sinista di A2"}{\[\displaystyle ``campo invariante a Sinista di A2''\]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{"campo invariante a Sinista di A2"}{\[\displaystyle ``campo invariante a Sinista di A2''\]}
+\end{maplelatex}
+\end{maplegroup}
+\textbf{}\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\mapleinline{inert}{2d}{A2 := Matrix(%id = 200258420)}{\[\displaystyle {\it A2}\, := \, \left[ \begin {array}{ccc} 0&0&-1\\ \noalign{\medskip}0&0&0\\ \noalign{\medskip}1&0&0\end {array} \right] \]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{Matrix(%id = 175291760)}{\[\displaystyle  \left[ \begin {array}{ccc} 0&0&-1\\ \noalign{\medskip}0&0&0\\ \noalign{\medskip}1&0&0\end {array} \right] \]}
+\end{maplelatex}
+\end{maplegroup}
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\mapleinline{inert}{2d}{CampoSinis := R*A2}{\[\displaystyle {\it CampoSinis}\, := \,R{\it A2}\]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{Matrix(%id = -1242207784)}{\[\displaystyle  \left[ \begin {array}{ccc} \sin \left( \phi \right) \sin \left( \theta \right) &0&-\cos \left( \phi \right) \cos \left( \psi \right) +\sin \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right) \\ \noalign{\medskip}\cos \left( \phi \right) \sin \left( \theta \right) &0&\sin \left( \phi \right) \cos \left( \psi \right) +\cos \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right) \\ \noalign{\medskip}\cos \left( \theta \right) &0&-\sin \left( \psi \right) \sin \left( \theta \right) \end {array} \right] \]}
+\end{maplelatex}
+\end{maplegroup}
+\textbf{}\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\mapleinline{inert}{2d}{f := x*e[1]+y*e[2]+z*e[3]-CampoSinis}{\[\displaystyle f\, := \,xe_{{1}}+ye_{{2}}+ze_{{3}}-{\it CampoSinis}\]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{Matrix(%id = 176569796)}{\[\displaystyle  \left[ \begin {array}{ccc} x \left( -\cos \left( \phi \right) \sin \left( \psi \right) -\sin \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right)  \right) +y\sin \left( \phi \right) \sin \left( \theta \right) \sin \left( \psi \right) +z \left( -\sin \left( \phi \right) \cos \left( \psi \right) -\cos \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right)  \right) -\sin \left( \phi \right) \sin \left( \theta \right) &x \left( \cos \left( \phi \right) \cos \left( \psi \right) -\sin \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right)  \right) -y\sin \left( \phi \right) \sin \left( \theta \right) \cos \left( \psi \right) +z \left( -\sin \left( \phi \right) \sin \left( \psi \right) +\cos \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right)  \right) &y\sin \left( \phi \right) \cos \left( \theta \right) +z\cos \left( \phi \right) \sin \left( \theta \right) +\cos \left( \phi \right) \cos \left( \psi \right) -\sin \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right) \\ \noalign{\medskip}x \left( \sin \left( \phi \right) \sin \left( \psi \right) -\cos \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right)  \right) +y\cos \left( \phi \right) \sin \left( \theta \right) \sin \left( \psi \right) +z \left( -\cos \left( \phi \right) \cos \left( \psi \right) +\sin \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right)  \right) -\cos \left( \phi \right) \sin \left( \theta \right) &x \left( -\sin \left( \phi \right) \cos \left( \psi \right) -\cos \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right)  \right) -y\cos \left( \phi \right) \sin \left( \theta \right) \cos \left( \psi \right) +z \left( -\cos \left( \phi \right) \sin \left( \psi \right) -\sin \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right)  \right) &y\cos \left( \phi \right) \cos \left( \theta \right) -z\sin \left( \phi \right) \sin \left( \theta \right) -\sin \left( \phi \right) \cos \left( \psi \right) -\cos \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right) \\ \noalign{\medskip}x\cos \left( \psi \right) \sin \left( \theta \right) +y\sin \left( \psi \right) \cos \left( \theta \right) -\cos \left( \theta \right) &x\sin \left( \psi \right) \sin \left( \theta \right) -y\cos \left( \psi \right) \cos \left( \theta \right) &-y\sin \left( \theta \right) +\sin \left( \psi \right) \sin \left( \theta \right) \end {array} \right] \]}
+\end{maplelatex}
+\end{maplegroup}
+\textbf{}\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\mapleinline{inert}{2d}{solve({f[1, 1] = 0, f[1, 2] = 0, f[1, 3] = 0, f[2, 1] = 0, f[2, 2] = 0, f[2, 3] = 0, f[3, 1] = 0, f[3, 2] = 0, f[3, 3] = 0}, {x, y, z})}{\[\displaystyle {\it solve} \left(  \left\{ f_{{1,1}}=0,f_{{1,2}}=0,f_{{1,3}}=0,f_{{2,1}}=0,f_{{2,2\\
+\mbox{}}}=0,f_{{2,3}}=0,f_{{3,1}}=0,f_{{3,2}}=0,f_{{3,3}}=0 \right\} , \left\{ x,y,z \right\}  \right) \]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{{x = cos(psi)*cos(theta)/sin(theta), y = sin(psi), z = -cos(psi)/sin(theta)}}{\[\displaystyle  \left\{ x={\frac {\cos \left( \psi \right) \cos \left( \theta \right) }{\sin \left( \theta \right) }},y=\sin \left( \psi \right) ,z=-{\frac {\cos \left( \psi \right) }{\sin \left( \theta \right) }} \right\} \]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{$\displaystyle $}
+\mapleinline{inert}{2d}{}{$\displaystyle $}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\mapleinline{inert}{2d}{"campo invariante a sinistra di A3"}{\[\displaystyle ``campo invariante a sinistra di A3''\]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{"campo invariante a sinistra di A3"}{\[\displaystyle ``campo invariante a sinistra di A3''\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\mapleinline{inert}{2d}{A3 := Matrix(%id = 176573700)}{\[\displaystyle {\it A3}\, := \, \left[ \begin {array}{ccc} 0&1&0\\ \noalign{\medskip}-1&0&0\\ \noalign{\medskip}0&0&0\end {array} \right] \]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{Matrix(%id = 191927488)}{\[\displaystyle  \left[ \begin {array}{ccc} 0&1&0\\ \noalign{\medskip}-1&0&0\\ \noalign{\medskip}0&0&0\end {array} \right] \]}
+\end{maplelatex}
+\end{maplegroup}
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+\mapleinline{inert}{2d}{Camposinis := R*A3}{\[\displaystyle {\it Camposinis}\, := \,R{\it A3}\]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{Matrix(%id = 176574404)}{\[\displaystyle  \left[ \begin {array}{ccc} -\cos \left( \phi \right) \sin \left( \psi \right) -\sin \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right) &\cos \left( \phi \right) \cos \left( \psi \right) -\sin \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right) &0\\ \noalign{\medskip}\sin \left( \phi \right) \sin \left( \psi \right) -\cos \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right) &-\sin \left( \phi \right) \cos \left( \psi \right) -\cos \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right) &0\\ \noalign{\medskip}\cos \left( \psi \right) \sin \left( \theta \right) &\sin \left( \psi \right) \sin \left( \theta \right) &0\end {array} \right] \]}
+\end{maplelatex}
+\end{maplegroup}
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+\textbf{}\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\mapleinline{inert}{2d}{f := x*e[1]+y*e[2]+z*e[3]-Camposinis}{\[\displaystyle f\, := \,xe_{{1}}+ye_{{2}}+ze_{{3}}-{\it Camposinis}\]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{Matrix(%id = 168845172)}{\[\displaystyle  \left[ \begin {array}{ccc} x \left( -\cos \left( \phi \right) \sin \left( \psi \right) -\sin \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right)  \right) +y\sin \left( \phi \right) \sin \left( \theta \right) \sin \left( \psi \right) +z \left( -\sin \left( \phi \right) \cos \left( \psi \right) -\cos \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right)  \right) +\cos \left( \phi \right) \sin \left( \psi \right) +\sin \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right) &x \left( \cos \left( \phi \right) \cos \left( \psi \right) -\sin \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right)  \right) -y\sin \left( \phi \right) \sin \left( \theta \right) \cos \left( \psi \right) +z \left( -\sin \left( \phi \right) \sin \left( \psi \right) +\cos \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right)  \right) -\cos \left( \phi \right) \cos \left( \psi \right) +\sin \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right) &y\sin \left( \phi \right) \cos \left( \theta \right) +z\cos \left( \phi \right) \sin \left( \theta \right) \\ \noalign{\medskip}x \left( \sin \left( \phi \right) \sin \left( \psi \right) -\cos \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right)  \right) +y\cos \left( \phi \right) \sin \left( \theta \right) \sin \left( \psi \right) +z \left( -\cos \left( \phi \right) \cos \left( \psi \right) +\sin \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right)  \right) -\sin \left( \phi \right) \sin \left( \psi \right) +\cos \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right) &x \left( -\sin \left( \phi \right) \cos \left( \psi \right) -\cos \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right)  \right) -y\cos \left( \phi \right) \sin \left( \theta \right) \cos \left( \psi \right) +z \left( -\cos \left( \phi \right) \sin \left( \psi \right) -\sin \left( \phi \right) \cos \left( \theta \right) \cos \left( \psi \right)  \right) +\sin \left( \phi \right) \cos \left( \psi \right) +\cos \left( \phi \right) \cos \left( \theta \right) \sin \left( \psi \right) &y\cos \left( \phi \right) \cos \left( \theta \right) -z\sin \left( \phi \right) \sin \left( \theta \right) \\ \noalign{\medskip}x\cos \left( \psi \right) \sin \left( \theta \right) +y\sin \left( \psi \right) \cos \left( \theta \right) -\cos \left( \psi \right) \sin \left( \theta \right) &x\sin \left( \psi \right) \sin \left( \theta \right) -y\cos \left( \psi \right) \cos \left( \theta \right) -\sin \left( \psi \right) \sin \left( \theta \right) &-y\sin \left( \theta \right) \end {array} \right] \]}
+\end{maplelatex}
+\end{maplegroup}
+\textbf{}\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\mapleinline{inert}{2d}{solve({f[1, 1] = 0, f[1, 2] = 0, f[1, 3] = 0, f[2, 1] = 0, f[2, 2] = 0, f[2, 3] = 0, f[3, 1] = 0, f[3, 2] = 0, f[3, 3] = 0}, {x, y, z})}{\[\displaystyle {\it solve} \left(  \left\{ f_{{1,1}}=0,f_{{1,2}}=0,f_{{1,3}}=0,f_{{2,1}}=0,f_{{2,2\\
+\mbox{}}}=0,f_{{2,3}}=0,f_{{3,1}}=0,f_{{3,2}}=0,f_{{3,3}}=0 \right\} , \left\{ x,y,z \right\}  \right) \]}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{{x = 1, y = 0, z = 0}}{\[\displaystyle  \left\{ x=1,y=0,z=0 \right\} \]}
+\end{maplelatex}
+\end{maplegroup}
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+\textbf{}\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\begin{Maple Normal}{
+\begin{Maple Normal}{
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+}\end{Maple Normal}
+}\end{Maple Normal}
+\end{document}

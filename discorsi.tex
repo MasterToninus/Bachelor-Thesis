@@ -1,0 +1,153 @@
+\documentclass[11pt]{report}
+
+\title{Parti Scartate}
+\author{AMM}
+
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[mathscr]{eucal} 
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{caption}
+\usepackage{latexsym}
+\usepackage{epstopdf}
+\usepackage{eepic,epic,eepicemu}
+\usepackage{color}
+
+\usepackage{bm}
+\pagestyle{headings}
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.95,0.95,0.95}
+
+\usepackage{amsthm}
+
+\usepackage[a4paper,top=4.25cm,bottom=3.75cm,left=3.25cm,right=3cm]{geometry}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Teorema}[section]
+\newtheorem{cor}[thm]{Corollario}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposizione}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definizione}[chapter]
+
+\theoremstyle{remark}
+\newtheorem{oss}{Osservazione}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\begin{document}
+\title
+\chapter{discorso sui fluidi}
+In un articolo di Arnold (fare riferimento) si mostra come le equazioni di Eulero per il moto di un fluido ideale incompribile possano essere scritte in una forma simile a quelle del corpo rigido con l'opportuna generalizzazione di permettere il fluire continuo del liquido oltre alle rotazioni del liquido.
+$\\$
+I generali spostamenti, nel caso del corpo rigido, preservano le distanze tra ogni coppia di particelle mentre, per il moto continuo di un liquido, non è possibile imporre alcun vincolo tra le posizioni reciproche delle particelle che lo compongono.
+$\\$
+Nella sua trattazione Arnold è partito dalla definizione dello spazio di configurazione $Q$ del fluido ideale, ha ottenuto la Lagrangiana sullo spazio $TQ$ e per ultimo è passato al formalismo Hamiltoniano sullo spazio $T^{\ast}Q$.
+$\\$
+Lo spazio di configurazione di un fluido ideale ha la struttura di gruppo di Lie. Si tratta del gruppo $ G = \textrm{Diff}_{\textrm{Vol}} (D) $ dei diffeomorfismi lisci da un dominio D in se stesso tali da preservare i volumi.
+L'operazione di composizione sul gruppo è semplicemente la composizione tra diffeomorfismi.
+
+\section{Dimostrazione diretta delle equazioni di Hamel-Boltman per la rotazione infinitesima}
+Chiamo M:
+\begin{displaymath}
+M : = \left[ \begin{array}{ccc}
+\sin(\theta) \sin(\phi) & \cos(\phi)	 & 0  \\
+\sin(\theta) \cos(\phi) & -\sin(\phi)	 & 0 \\
+\cos(\theta) 			& 0				 & 1 \\
+\end{array} \right]
+\end{displaymath}
+Valgono le seguenti equazioni:
+\begin{displaymath}
+\left[ \begin{array}{c} \epsilon _{x} \\ \epsilon _{y} \\ \epsilon _{z} \\ \end{array} \right] 
+= M 
+\left[ \begin{array}{c}
+\textrm{d} \psi \\
+\textrm{d} \theta \\
+\textrm{d} \phi \\
+\end{array} \right]
+\qquad
+\left[ \begin{array}{c}
+\textrm{d} \psi \\
+\textrm{d} \theta \\
+\textrm{d} \phi \\
+\end{array} \right] = M^{-1}
+\left[ \begin{array}{c}
+\epsilon _{x} \\
+\epsilon _{y} \\
+\epsilon _{z} \\
+\end{array} \right] 
+\end{displaymath}
+
+\begin{displaymath}
+\left[ \begin{array}{c} p \\ q \\ r \\ \end{array} \right] 
+= M 
+\left[ \begin{array}{c} \dot{\psi} \\ \dot{\theta} \\ \dot{\phi} \\ \end{array} \right]
+\qquad
+\left[ \begin{array}{c} \dot{\psi} \\ \dot{\theta} \\ \dot{\phi} \\ \end{array} \right] 
+= M^{-1}
+\left[ \begin{array}{c} p \\ q \\ r \\ \end{array} \right]
+\end{displaymath}
+Pertanto:
+
+\begin{displaymath}
+\dfrac{\textrm{d}}{\textrm{d}t}
+\left[ \begin{array}{c} \epsilon _{x} \\ \epsilon _{y} \\ \epsilon _{z} \\ \end{array} \right] 
+= M \,
+\textrm{d}\Bigr( 
+\left[ \begin{array}{c} \dot{\psi} \\ \dot{\theta} \\ \dot{\phi} \\ \end{array} \right] \Bigr)
+ + \dfrac{\textrm{d} M}{\textrm{d}t} 
+\left[ \begin{array}{c} \textrm{d} \psi \\ \textrm{d} \theta \\ \textrm{d} \phi \\ \end{array} \right] 
+= M \Bigr(
+\textrm{d}M^{-1} \left[ \begin{array}{c} p \\ q \\ r \\ \end{array} \right] +
+M^{-1} \left[ \begin{array}{c} \textrm{d}p \\ \textrm{d}q \\ \textrm{d}r \\ \end{array} \right] \Bigr) + 
+\dfrac{\textrm{d}M}{\textrm{d}t} M^{-1} \left[ \begin{array}{c} \epsilon _{x} \\ \epsilon _{y} \\ \epsilon _{z} \\ \end{array} \right] 
+\end{displaymath}
+sfruttando la regola di Liebniz risulta:
+
+\begin{displaymath}\begin{split}
+\dfrac{\textrm{d}}{\textrm{d}t}
+\left[ \begin{array}{c} \epsilon _{x} \\ \epsilon _{y} \\ \epsilon _{z} \\ \end{array} \right] 
+& = \left[ \begin{array}{c} \textrm{d}p \\ \textrm{d}q \\ \textrm{d}r \\ \end{array} \right] + \Bigr( \textrm{d}( M M^{-1}) - \textrm{d}M \, M^{-1} \Bigr) \left[ \begin{array}{c} p \\ q \\ r \\ \end{array} \right]  + \dfrac{\textrm{d}M}{\textrm{d}t} M^{-1} \left[ \begin{array}{c} \epsilon _{x} \\ \epsilon _{y} \\ \epsilon _{z} \\ \end{array} \right] = \\ &=
+\left[ \begin{array}{c} \textrm{d}p \\ \textrm{d}q \\ \textrm{d}r \\ \end{array} \right] + \Bigr(
+\dfrac{\textrm{d}M}{\textrm{d}t} M^{-1} \Bigr) \left[ \begin{array}{c} \epsilon _{x} \\ \epsilon _{y} \\ \epsilon _{z} \\ \end{array} \right] -\Bigr(\textrm{d}M \, M^{-1} \Bigr) \left[ \begin{array}{c} p \\ q \\ r \\ \end{array} \right]
+\end{split}\end{displaymath}
+Sviluppando le derivate si ottiene:
+
+\begin{displaymath}\begin{split}
+\dfrac{\textrm{d}M}{\textrm{d}t} M^{-1} &= \Bigr(
+\dfrac{\partial M}{\partial \psi}\dot{\psi} + 
+\dfrac{\partial M}{\partial \theta}\dot{\theta} +
+\dfrac{\partial M}{\partial \phi}\dot{\phi} +
+\Bigr) M^{-1} = \left[ \begin{array}{ccc}  \dot{\psi} & \dot{\theta} & \dot{phi} \end{array} \right] \vec{K} M^{-1} = \left[ \begin{array}{ccc}  p & q & r \end{array} 
+\right] \bigr( M^{-1} \bigr)^{T} \vec{K} M^{-1} 
+\\
+\textrm{d}M M^{-1} &=  \left[ \begin{array}{ccc}  \epsilon_{x} & \epsilon_{y} & \epsilon_{z} \end{array} \right] \bigr( M^{-1} \bigr)^{T} \vec{K} M^{-1} 
+\end{split}\end{displaymath}
+con:
+
+\begin{displaymath} 
+\vec{K} =  \left[ \begin{array}{c}  \frac{\partial M}{\partial \psi} \\ \frac{\partial M}{\partial \theta} \\ \frac{\partial M}{\partial \phi} \end{array} \right]  
+\qquad \vec{F} = (M^{-1})^{T} \vec{K} M^{-1}
+\end{displaymath}
+risulta:
+
+\begin{displaymath}
+\dfrac{\textrm{d}}{\textrm{d}t}
+\left[ \begin{array}{c} \epsilon _{x} \\ \epsilon _{y} \\ \epsilon _{z} \\ \end{array} \right] =
+\left[ \begin{array}{c} \textrm{d}p \\ \textrm{d}q \\ \textrm{d}r \\ \end{array} \right] +  \left[ \begin{array}{ccc}  p & q & r \end{array} \right] \vec{F} \left[ \begin{array}{c}  \epsilon_{x} \\ \epsilon_{y} \\ \epsilon_{z} \end{array} \right]
+-
+\left[ \begin{array}{ccc}  \epsilon_{x} & \epsilon_{y} & \epsilon_{z} \end{array}\right] \vec{F}
+\left[ \begin{array}{c}  p \\ q \\ r \end{array}\right]
+\end{displaymath}
+ 
+\end{document}
+
+
+
+
